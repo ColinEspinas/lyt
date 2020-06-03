@@ -1,4 +1,5 @@
 
+// Default values for margins:
 $margin-values: (
 	xs: 5px,
 	s: 10px,
@@ -6,11 +7,15 @@ $margin-values: (
 	l: 25px,
 	xl: 50px,
 	xxl: 100px
-);
+) !default;
 
 .m {
+	&-0 {
+		margin: 0;
+	}
+	// Generate all margin classes for each margin values:
 	@each $name, $value in $margin-values {
-		&-a-#{$name} {
+		&-#{$name} {
 			margin: $value;
 		}
 		&-t-#{$name} {

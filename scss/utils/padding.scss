@@ -1,3 +1,5 @@
+
+// Default values for paddings:
 $padding-values: (
 	xs: 5px,
 	s: 10px,
@@ -5,11 +7,15 @@ $padding-values: (
 	l: 25px,
 	xl: 50px,
 	xxl: 100px
-);
+) !default;
 
 .p {
+	&-0 {
+		padding: 0;
+	}
+	// Generate all padding classes for each padding values:
 	@each $name, $value in $padding-values {
-		&-a-#{$name} {
+		&-#{$name} {
 			padding: $value;
 		}
 		&-t-#{$name} {

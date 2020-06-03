@@ -1,7 +1,7 @@
 {
   "name": "lyt",
   "version": "0.0.1",
-  "description": "A CSS layout library",
+  "description": "A flexible CSS layout library",
   "main": "scss/lyt.scss",
   "scripts": {
     "dist-clean": "rimraf dist",

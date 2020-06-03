@@ -1,4 +1,8 @@
-.p-a-xs {
+.p-0 {
+  padding: 0;
+}
+
+.p-xs {
   padding: 5px;
 }
 
@@ -18,7 +22,7 @@
   padding-right: 5px;
 }
 
-.p-a-s {
+.p-s {
   padding: 10px;
 }
 
@@ -38,7 +42,7 @@
   padding-right: 10px;
 }
 
-.p-a-m {
+.p-m {
   padding: 15px;
 }
 
@@ -58,7 +62,7 @@
   padding-right: 15px;
 }
 
-.p-a-l {
+.p-l {
   padding: 25px;
 }
 
@@ -78,7 +82,7 @@
   padding-right: 25px;
 }
 
-.p-a-xl {
+.p-xl {
   padding: 50px;
 }
 
@@ -98,7 +102,7 @@
   padding-right: 50px;
 }
 
-.p-a-xxl {
+.p-xxl {
   padding: 100px;
 }
 

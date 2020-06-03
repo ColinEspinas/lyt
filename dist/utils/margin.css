@@ -1,4 +1,8 @@
-.m-a-xs {
+.m-0 {
+  margin: 0;
+}
+
+.m-xs {
   margin: 5px;
 }
 
@@ -18,7 +22,7 @@
   margin-right: 5px;
 }
 
-.m-a-s {
+.m-s {
   margin: 10px;
 }
 
@@ -38,7 +42,7 @@
   margin-right: 10px;
 }
 
-.m-a-m {
+.m-m {
   margin: 15px;
 }
 
@@ -58,7 +62,7 @@
   margin-right: 15px;
 }
 
-.m-a-l {
+.m-l {
   margin: 25px;
 }
 
@@ -78,7 +82,7 @@
   margin-right: 25px;
 }
 
-.m-a-xl {
+.m-xl {
   margin: 50px;
 }
 
@@ -98,7 +102,7 @@
   margin-right: 50px;
 }
 
-.m-a-xxl {
+.m-xxl {
   margin: 100px;
 }
 
