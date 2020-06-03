@@ -1,3 +1,7 @@
+@import "../config";
+
+// Default class name for padding classes
+$padding-classname: "padding" !default;
 
 // Default values for paddings:
 $padding-values: (
@@ -9,7 +13,7 @@ $padding-values: (
 	xxl: 100px
 ) !default;
 
-.p {
+.#{$padding-classname} {
 	&-0 {
 		padding: 0;
 	}

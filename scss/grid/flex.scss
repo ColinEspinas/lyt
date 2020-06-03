@@ -1,0 +1,150 @@
+@import "../config";
+
+$row-classname: "row" !default;
+$column-classname: "column" !default;
+
+$column-count: 12 !default;
+
+$grid-breakpoints: (
+	sm: 544px,
+	md: 768px,
+	lg: 1012px,
+	xl: 1280px
+) !default;
+
+$grid-gaps: (
+	xs: 5px,
+	s: 10px,
+	m: 25px,
+	l: 50px
+) !default;
+
+@if length($grid-gaps) == 1 {
+	$gap-value: map-get($grid-gaps, nth(map-keys($grid-gaps), 1)) !global;
+}
+
+.#{$row-classname} {
+	display: flex;
+	flex-wrap: wrap;
+
+	@if length($grid-gaps) == 1 {
+		&.gap {
+			justify-content: space-between;
+		}
+	}
+	@else {
+		// For each gap value we create a class
+		@each $gap-name, $gap-value in $grid-gaps {
+			&.gap-#{$gap-name} {
+				justify-content: space-between;
+			}
+		}
+	}
+}
+
+.#{$column-classname} {
+
+	// Default columns sizes:
+	@for $i from 1 through $column-count {
+		// By default auto columns take 100% of the space:
+		&.\-#{$i}-#{$column-count} {
+			width: 100%;
+		}
+
+		@each $bp-name, $bp-value in $grid-breakpoints {
+			&.#{$bp-name}-#{$i}-#{$column-count} {
+				width: calc(100% * #{$i} / #{$column-count});
+			}
+			@if length($grid-gaps) == 1 {
+				@at-root .#{$row-classname}.gap>&.#{$bp-name}-#{$i}-#{$column-count} {
+					@if $i < $column-count {
+						width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
+					}
+					@else {
+						width: calc(100% * #{$i} / #{$column-count});
+					}
+				}
+			}
+			@else {
+				// Add gap classes if column do not take full space:
+				@each $gap-name, $gap-value in $grid-gaps {
+					@at-root .#{$row-classname}.gap-#{$gap-name}>&.#{$bp-name}-#{$i}-#{$column-count} {
+						@if $i < $column-count {
+							width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
+						}
+						@else {
+							width: calc(100% * #{$i} / #{$column-count});
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Add each breakpoints media queries:
+	@each $bp-name, $bp-value in $grid-breakpoints {
+		@media (min-width: $bp-value) {
+			@for $i from 1 through $column-count {
+
+				// Set auto column sizes on first media query
+				@if index(($grid-breakpoints), ($bp-name $bp-value)) == 1 {
+					&.\-#{$i}-#{$column-count} {
+						width: calc(100% * #{$i} / #{$column-count});
+					}
+
+					@if length($grid-gaps) == 1 {
+						@at-root .#{$row-classname}.gap>&.\-#{$i}-#{$column-count} {
+							@if $i < $column-count {
+								width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
+							}
+							@else {
+								width: calc(100% * #{$i} / #{$column-count});
+							}
+						}
+					}
+					@else {
+						// Add gap classes if column do not take full space:
+						@each $gap-name, $gap-value in $grid-gaps {
+							@at-root .#{$row-classname}.gap-#{$gap-name}>&.\-#{$i}-#{$column-count} {
+								@if $i < $column-count {
+									width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
+								}
+								@else {
+									width: calc(100% * #{$i} / #{$column-count});
+								}
+							}
+						}
+					}
+				}
+
+				&.#{$bp-name}-#{$i}-#{$column-count} {
+					width: calc(100% * #{$i} / #{$column-count});
+				}
+
+				@if length($grid-gaps) == 1 {
+					@at-root .#{$row-classname}.gap>&.#{$bp-name}-#{$i}-#{$column-count} {
+						@if $i < $column-count {
+							width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
+						}
+						@else {
+							width: calc(100% * #{$i} / #{$column-count});
+						}
+					}
+				}
+				@else {
+					// Add gap classes if column do not take full space:
+					@each $gap-name, $gap-value in $grid-gaps {
+						@at-root .#{$row-classname}.gap-#{$gap-name}>&.#{$bp-name}-#{$i}-#{$column-count} {
+							@if $i < $column-count {
+								width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
+							}
+							@else {
+								width: calc(100% * #{$i} / #{$column-count});
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
