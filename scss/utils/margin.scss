@@ -1,0 +1,29 @@
+
+$margin-values: (
+	xs: 5px,
+	s: 10px,
+	m: 15px,
+	l: 25px,
+	xl: 50px,
+	xxl: 100px
+);
+
+.m {
+	@each $name, $value in $margin-values {
+		&-a-#{$name} {
+			margin: $value;
+		}
+		&-t-#{$name} {
+			margin-top: $value;
+		}
+		&-l-#{$name} {
+			margin-left: $value;
+		}
+		&-b-#{$name} {
+			margin-bottom: $value;
+		}
+		&-r-#{$name} {
+			margin-right: $value;
+		}
+	}
+}

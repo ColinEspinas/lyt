@@ -1,0 +1,28 @@
+$padding-values: (
+	xs: 5px,
+	s: 10px,
+	m: 15px,
+	l: 25px,
+	xl: 50px,
+	xxl: 100px
+);
+
+.p {
+	@each $name, $value in $padding-values {
+		&-a-#{$name} {
+			padding: $value;
+		}
+		&-t-#{$name} {
+			padding-top: $value;
+		}
+		&-l-#{$name} {
+			padding-left: $value;
+		}
+		&-b-#{$name} {
+			padding-bottom: $value;
+		}
+		&-r-#{$name} {
+			padding-right: $value;
+		}
+	}
+}

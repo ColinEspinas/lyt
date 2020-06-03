@@ -1,0 +1,45 @@
+{
+  "name": "lyt",
+  "version": "0.0.1",
+  "description": "A CSS layout library",
+  "main": "scss/lyt.scss",
+  "scripts": {
+    "dist-clean": "rimraf dist",
+    "build-sass": "node-sass --output-style expanded -o dist scss/",
+    "build-autoprefix": "foreach -g \"dist/**/*.css\" -x \"postcss --use autoprefixer --no-map #{path} -o #{path}\" --no-c",
+    "build-minify": "foreach -g \"dist/**/*.css\" -x \"cleancss #{path} -o #{dir}/#{name}.min.css \"",
+    "build": "npm run dist-clean && npm run build-sass && npm run build-autoprefix && npm run build-minify",
+    "dev": "npm run build-sass -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ColinEspinas/lyt.git"
+  },
+  "keywords": [
+    "library",
+    "css",
+    "layout",
+    "scss",
+    "responsive"
+  ],
+  "author": "Colin Espinas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ColinEspinas/lyt/issues"
+  },
+  "homepage": "https://github.com/ColinEspinas/lyt#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.8.0",
+    "clean-css-cli": "^4.3.0",
+    "foreach-cli": "^1.8.1",
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.1",
+    "rimraf": "^3.0.2"
+  },
+  "files": [
+    "scss",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
+}
