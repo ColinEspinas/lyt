@@ -42,13 +42,10 @@ You can also use each modules individually.
 ## Modules
 
 Lyt is build from multiple modules:
-- [Getting started](#getting-started)
-	- [🚀 Using a CDN](#-using-a-cdn)
+
 - [Modules](#modules)
 	- [Grid](#grid)
 		- [Flex](#flex)
-		- [Margin](#margin)
-		- [Padding -->](#padding---)
 
 **All the documentation use the default configuration**
 
