@@ -43,9 +43,8 @@ You can also use each modules individually.
 
 Lyt is build from multiple modules:
 
-- [Modules](#modules)
-	- [Grid](#grid)
-		- [Flex](#flex)
+- [Grid](#grid)
+	- [Flex](#flex)
 
 **All the documentation use the default configuration**
 
@@ -71,7 +70,7 @@ Add the `gap` class to a row to add gaps between columns.
     </div>
 </div>
 ```
-[See example live](https://jsfiddle.net/9mdezjr0/)
+[See example live](https://jsfiddle.net/hpax1ksL/)
 
 You can also specify a breakpoint to a column by using the `breakpoint-n` class instead (e.g. `sm-5`).
 
@@ -87,7 +86,7 @@ By specifying multiple breakpoints to a column, the column will adapt automatica
     </div>
 </div>
 ```
-[See example live](https://jsfiddle.net/9mdezjr0/1/)
+[See example live](https://jsfiddle.net/ogarwz7v/)
 
 You can offset columns by using the `offset-n` class. You can also specify breakpoints by using the `offset-breakpoint-n` class.
 
@@ -98,7 +97,7 @@ You can offset columns by using the `offset-n` class. You can also specify break
 	</div>
 </div>
 ```
-[See example live](https://jsfiddle.net/9mdezjr0/2/)
+[See example live](https://jsfiddle.net/sr2c0w96/)
 
 <!-- ### Utilities
 
