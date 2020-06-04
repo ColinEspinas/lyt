@@ -1,8 +1,9 @@
 {
   "name": "lyt",
   "version": "0.0.1",
-  "description": "A flexible CSS layout library",
+  "description": "A flexible & highly configurable CSS layout library",
   "main": "scss/lyt.scss",
+  "unpkg": "dist/lyt.min.css",
   "scripts": {
     "dist-clean": "rimraf dist",
     "build-sass": "node-sass --output-style expanded -o dist scss/",
@@ -19,10 +20,16 @@
     "library",
     "css",
     "layout",
+    "grid",
     "scss",
-    "responsive"
+    "responsive",
+    "flexible",
+    "configurable"
   ],
-  "author": "Colin Espinas",
+  "author": {
+    "name" : "Colin Espinas",
+    "url" : "https://colinespinas.com/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ColinEspinas/lyt/issues"
@@ -38,8 +45,6 @@
   },
   "files": [
     "scss",
-    "dist",
-    "LICENSE",
-    "README.md"
+    "dist"
   ]
 }

@@ -34,5 +34,13 @@ $margin-values: (
 		&-r-#{$name} {
 			margin-right: $value;
 		}
+		&-lr-#{$name} {
+			margin-left: $value;
+			margin-right: $value;
+		}
+		&-tb-#{$name} {
+			margin-top: $value;
+			margin-bottom: $value;
+		}
 	}
 }

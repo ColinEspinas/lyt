@@ -34,5 +34,13 @@ $padding-values: (
 		&-r-#{$name} {
 			padding-right: $value;
 		}
+		&-lr-#{$name} {
+			padding-left: $value;
+			padding-right: $value;
+		}
+		&-tb-#{$name} {
+			padding-top: $value;
+			padding-bottom: $value;
+		}
 	}
 }

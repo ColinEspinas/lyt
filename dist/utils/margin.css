@@ -22,6 +22,16 @@
   margin-right: 4px;
 }
 
+.margin-lr-xs {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.margin-tb-xs {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
 .margin-s {
   margin: 8px;
 }
@@ -40,6 +50,16 @@
 
 .margin-r-s {
   margin-right: 8px;
+}
+
+.margin-lr-s {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.margin-tb-s {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .margin-m {
@@ -62,6 +82,16 @@
   margin-right: 16px;
 }
 
+.margin-lr-m {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.margin-tb-m {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 .margin-l {
   margin: 24px;
 }
@@ -80,6 +110,16 @@
 
 .margin-r-l {
   margin-right: 24px;
+}
+
+.margin-lr-l {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.margin-tb-l {
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .margin-xl {
@@ -102,6 +142,16 @@
   margin-right: 32px;
 }
 
+.margin-lr-xl {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.margin-tb-xl {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
 .margin-xxl {
   margin: 40px;
 }
@@ -120,4 +170,14 @@
 
 .margin-r-xxl {
   margin-right: 40px;
+}
+
+.margin-lr-xxl {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.margin-tb-xxl {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }

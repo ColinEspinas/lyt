@@ -1,4 +1,5 @@
 @import "../config";
+@import "../functions";
 
 $row-classname: "row" !default;
 $column-classname: "column" !default;
@@ -9,11 +10,11 @@ $grid-breakpoints: (
 	sm: 544px,
 	md: 768px,
 	lg: 1012px,
-	xl: 1280px
+	xl: 1280px,
 ) !default;
 
 $grid-gaps: (
-	standard: 10px,
+	standard: 5px,
 ) !default;
 
 @if length($grid-gaps) == 1 {
@@ -23,6 +24,7 @@ $grid-gaps: (
 .#{$row-classname} {
 	display: flex;
 	flex-wrap: wrap;
+	width: 100%;
 
 	@if length($grid-gaps) == 1 {
 		&.gap {
@@ -41,21 +43,50 @@ $grid-gaps: (
 
 .#{$column-classname} {
 
-	// Default columns sizes:
+	box-sizing: border-box;
+	width: 100%;
+
+	// Init auto columns:
 	@for $i from 1 through $column-count {
 		// By default auto columns take 100% of the space:
-		&.\-#{$i}-#{$column-count} {
+		&.\-#{$i} {
 			width: 100%;
 		}
+	}
 
-		@each $bp-name, $bp-value in $grid-breakpoints {
-			&.#{$bp-name}-#{$i}-#{$column-count} {
+	// Init auto columns offsets:
+	@for $i from 1 through $column-count {
+		&.offset-#{$i} {
+			margin-left: 0;
+		}
+
+		// Add gap classes if column do not take full space:
+		@if length($grid-gaps) == 1 {
+			// Offset for auto columns
+			@at-root .#{$row-classname}.gap>&.offset-#{$i} {
+				margin-left: calc(100% * #{$i} / #{$column-count} + #{$gap-value} / 2);
+			}
+		}
+		@else {
+			@each $gap-name, $gap-value in $grid-gaps {
+				// Offset for auto columns
+				@at-root .#{$row-classname}.gap-#{$gap-name}>&.offset-#{$i} {
+					margin-left: calc(100% * #{$i} / #{$column-count} + #{$gap-value} / 2);
+				}
+			}
+		}
+	}
+
+	// Init breakpoint columns:
+	@each $bp-name, $bp-value in map-reverse($grid-breakpoints) {
+		@for $i from 1 through $column-count {
+			&.#{$bp-name}-#{$i} {
 				width: calc(100% * #{$i} / #{$column-count});
 			}
-
+	
 			// Add gap classes if column do not take full space:
 			@if length($grid-gaps) == 1 {
-				@at-root .#{$row-classname}.gap>&.#{$bp-name}-#{$i}-#{$column-count} {
+				@at-root .#{$row-classname}.gap>&.#{$bp-name}-#{$i} {
 					@if $i < $column-count {
 						width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
 					}
@@ -66,7 +97,7 @@ $grid-gaps: (
 			}
 			@else {
 				@each $gap-name, $gap-value in $grid-gaps {
-					@at-root .#{$row-classname}.gap-#{$gap-name}>&.#{$bp-name}-#{$i}-#{$column-count} {
+					@at-root .#{$row-classname}.gap-#{$gap-name}>&.#{$bp-name}-#{$i} {
 						@if $i < $column-count {
 							width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
 						}
@@ -79,6 +110,15 @@ $grid-gaps: (
 		}
 	}
 
+	// Init Offset for breakpoint columns:
+	@each $bp-name, $bp-value in map-reverse($grid-breakpoints) {
+		@for $i from 1 through $column-count {
+			&.offset-#{$bp-name}-#{$i} {
+				margin-left: calc(100% * #{$i} / #{$column-count});
+			}
+		}
+	}
+
 	// Add each breakpoints media queries:
 	@each $bp-name, $bp-value in $grid-breakpoints {
 		@media (min-width: $bp-value) {
@@ -86,13 +126,17 @@ $grid-gaps: (
 
 				// Set auto column sizes on first media query
 				@if index(($grid-breakpoints), ($bp-name $bp-value)) == 1 {
-					&.\-#{$i}-#{$column-count} {
-						width: calc(100% * #{$i} / #{$column-count});
+					&.\-#{$i} {
+						width: calc(100% * #{$i} / #{$column-count});max-width: calc(100% * #{$i} / #{$column-count});
+					}
+
+					&.offset-#{$i} {
+						margin-left: calc(100% * #{$i} / #{$column-count});
 					}
 
 					// Add gap classes if column do not take full space:
 					@if length($grid-gaps) == 1 {
-						@at-root .#{$row-classname}.gap>&.\-#{$i}-#{$column-count} {
+						@at-root .#{$row-classname}.gap>&.\-#{$i} {
 							@if $i < $column-count {
 								width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
 							}
@@ -100,10 +144,15 @@ $grid-gaps: (
 								width: calc(100% * #{$i} / #{$column-count});
 							}
 						}
+
+						// Offset for auto columns
+						@at-root .#{$row-classname}.gap>&.offset-#{$i} {
+							margin-left: calc(100% * #{$i} / #{$column-count} + #{$gap-value} / 2);
+						}
 					}
 					@else {
 						@each $gap-name, $gap-value in $grid-gaps {
-							@at-root .#{$row-classname}.gap-#{$gap-name}>&.\-#{$i}-#{$column-count} {
+							@at-root .#{$row-classname}.gap-#{$gap-name}>&.\-#{$i} {
 								@if $i < $column-count {
 									width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
 								}
@@ -111,17 +160,26 @@ $grid-gaps: (
 									width: calc(100% * #{$i} / #{$column-count});
 								}
 							}
+
+							// Offset for auto columns
+							@at-root .#{$row-classname}.gap-#{$gap-name}>&.offset-#{$i} {
+								margin-left: calc(100% * #{$i} / #{$column-count} + #{$gap-value} / 2);
+							}
 						}
 					}
 				}
 
-				&.#{$bp-name}-#{$i}-#{$column-count} {
+				&.#{$bp-name}-#{$i} {
 					width: calc(100% * #{$i} / #{$column-count});
+				}
+
+				&.offset-#{$bp-name}-#{$i} {
+					margin-left: calc(100% * #{$i} / #{$column-count});
 				}
 
 				// Add gap classes if column do not take full space:
 				@if length($grid-gaps) == 1 {
-					@at-root .#{$row-classname}.gap>&.#{$bp-name}-#{$i}-#{$column-count} {
+					@at-root .#{$row-classname}.gap>&.#{$bp-name}-#{$i} {
 						@if $i < $column-count {
 							width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
 						}
@@ -129,16 +187,26 @@ $grid-gaps: (
 							width: calc(100% * #{$i} / #{$column-count});
 						}
 					}
+
+					// Offset
+					@at-root .#{$row-classname}.gap>&.offset-#{$bp-name}-#{$i} {
+						margin-left: calc(100% * #{$i} / #{$column-count} + #{$gap-value} / 2);
+					}
 				}
 				@else {
 					@each $gap-name, $gap-value in $grid-gaps {
-						@at-root .#{$row-classname}.gap-#{$gap-name}>&.#{$bp-name}-#{$i}-#{$column-count} {
+						@at-root .#{$row-classname}.gap-#{$gap-name}>&.#{$bp-name}-#{$i} {
 							@if $i < $column-count {
 								width: calc(100% * #{$i} / #{$column-count} - #{$gap-value});
 							}
 							@else {
 								width: calc(100% * #{$i} / #{$column-count});
 							}
+						}
+
+						// Offset
+						@at-root .#{$row-classname}.gap-#{$gap-name}>&.offset-#{$bp-name}-#{$i} {
+							margin-left: calc(100% * #{$i} / #{$column-count} + #{$gap-value} / 2);
 						}
 					}
 				}
