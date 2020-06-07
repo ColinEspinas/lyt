@@ -44,7 +44,10 @@ You can also use each modules individually.
 Lyt is build from multiple modules:
 
 - [Grid](#grid)
-	- [Flex](#flex)
+  - [Flex](#flex)
+- [Utilities](#utilities)
+  - [Margin](#margin)
+  - [Padding](#padding)
 
 **All the documentation use the default configuration**
 
@@ -99,8 +102,42 @@ You can offset columns by using the `offset-n` class. You can also specify break
 ```
 [See example live](https://jsfiddle.net/sr2c0w96/)
 
-<!-- ### Utilities
+### Utilities
 
 #### Margin
 
-#### Padding -->
+Use the `margin-size` class to add a margin to an element (`size` is the name of the value to the margin).
+
+```html
+<p class="margin-m">I am a funny text.</p>
+```
+
+Default configuration uses the following values for margin:
+| Name | Value |
+|------|-------|
+| xs   | 4px   |
+| s    | 8px   |
+| m    | 16px  |
+| l    | 24px  |
+| xl   | 32px  |
+| xxl  | 40px  |
+
+By default, the margin value is applied to all sides. You can specify a location for the margin with `margin-location-size` (e.g. `margin-t-xl`).
+
+To specify a location use:
+| Name | Location       |
+|------|----------------|
+| t    | top            |
+| l    | left           |
+| b    | bottom         |
+| r    | right          |
+| tb   | top and bottom |
+| lr   | left and right |
+
+#### Padding
+
+Padding classes are used like margin classes but add padding instead.
+
+```html
+<p class="padding-t-xxl">I am super cool!<p>
+```
