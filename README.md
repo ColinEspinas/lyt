@@ -21,7 +21,7 @@ A flexible and highly configurable CSS layout library. Designed to be tweaked.
 
 ## Getting started
 
-### 🚀 Using a CDN
+### 🚀 Import using a CDN
 
 Just link the `lyt.css` file or it minified version.
 
@@ -35,9 +35,30 @@ You can also use each modules individually.
 
 ```html
 <!-- Use normal or minified -->
-<link rel="stylesheet" href="../dist/grid/flex.css">
-<link rel="stylesheet" href="../dist/grid/flex.min.css">
+<link rel="stylesheet" href="path/to/lyt/dist/grid/flex.css">
+<link rel="stylesheet" href="path/to/lyt/dist/grid/flex.min.css">
 ```
+
+### ⚙️ Configure
+
+Lyt is designed to be easily configurable using `scss`.
+
+When using a CDN or local download, you can import the `scss` files by loading them from the `/scss` directory.
+
+```scss
+@import "path/to/lyt/scss/lyt.scss";
+/* Or using individual modules */
+@import "path/to/lyt/scss/grid/flex.scss";
+```
+
+Then you just need to import your configuration file before you import the lyt module files.
+
+```scss
+@import "path/to/config/config";
+@import "path/to/lyt/scss/lyt.scss";
+```
+
+You can find a template config file where all variables are commented with the default values in `/scss/_config.scss`. This configuration file is the default configuration, it is imported by default when building the library.
 
 ## Modules
 
