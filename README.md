@@ -54,7 +54,7 @@ When using a CDN or local download, you can import the `scss` files by loading t
 Then you just need to import your configuration file before you import the lyt module files.
 
 ```scss
-@import "path/to/config/config";
+@import "path/to/config";
 @import "path/to/lyt/scss/lyt.scss";
 ```
 
