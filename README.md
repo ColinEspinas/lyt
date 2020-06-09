@@ -39,6 +39,12 @@ You can also use each modules individually.
 <link rel="stylesheet" href="path/to/lyt/dist/grid/flex.min.css">
 ```
 
+### 📦 Install with a package manager
+
+```sh
+npm install lyt-css
+```
+
 ### ⚙️ Configure
 
 Lyt is designed to be easily configurable using `scss`.
