@@ -123,11 +123,18 @@ You can offset columns by using the `offset-n` class. You can also specify break
 ```
 [See example live](https://jsfiddle.net/sr2c0w96/)
 
+| Breakpoint | Value  |
+|------------|--------|
+| sm         | 544p   |
+| md         | 768px  |
+| lg         | 1012px |
+| xl         | 1280px |
+
 ### Utilities
 
 #### Margin
 
-Use the `margin-size` class to add a margin to an element (`size` is the name of the value to the margin).
+Use the `margin-size` class to add a margin to an element (`size` being the name of the value to the margin).
 
 ```html
 <p class="margin-m">I am a funny text.</p>
@@ -143,10 +150,13 @@ Default configuration uses the following values for margin:
 | xl   | 32px  |
 | xxl  | 40px  |
 
-By default, the margin value is applied to all sides. You can specify a location for the margin with `margin-location-size` (e.g. `margin-t-xl`).
+By default, the margin value is applied to all sides. You can specify sides with `margin-side-size` (e.g. `margin-t-xl`).
 
-To specify a location use:
-| Name | Location       |
+```html
+<p class="margin-tb-m">I am a super funny text.</p>
+```
+
+| Name | Sides          |
 |------|----------------|
 | t    | top            |
 | l    | left           |
