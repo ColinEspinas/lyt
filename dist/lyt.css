@@ -1486,8 +1486,54 @@
   }
 }
 
+.display-block {
+  display: block;
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-none {
+  display: none;
+}
+
 .margin-0 {
   margin: 0;
+}
+
+.margin-a {
+  margin: auto;
+}
+
+.margin-t-a {
+  margin-top: auto;
+}
+
+.margin-l-a {
+  margin-left: auto;
+}
+
+.margin-b-a {
+  margin-bottom: auto;
+}
+
+.margin-r-a {
+  margin-right: auto;
+}
+
+.margin-lr-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin-tb-a {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .margin-xs {

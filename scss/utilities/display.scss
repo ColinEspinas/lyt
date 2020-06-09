@@ -1,0 +1,19 @@
+@import "../config";
+
+// Default class name for display classes
+$display-classname: "display" !default;
+
+.#{$display-classname} {
+	&-block {
+		display: block;
+	}
+	&-inline {
+		display: inline;
+	}
+	&-inline-block {
+		display: inline-block;
+	}
+	&-none {
+		display: none;
+	}
+}

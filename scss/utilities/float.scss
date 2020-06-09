@@ -1,0 +1,19 @@
+@import "../config";
+
+// Default class name for float classes
+$float-classname: "float" !default;
+
+.#{$float-classname} {
+	&-left {
+		float: left;
+	}
+	&-right {
+		float: right;
+	}
+	&-none {
+		float: none;
+	}
+	&-clear {
+		clear: both;
+	}
+}
