@@ -19,7 +19,7 @@ A flexible and highly configurable CSS layout library. Designed to be tweaked.
 <a href="https://github.com/ColinEspinas/lyt/issues" target="_blank">Report a Bug</a>
 </p>
 
-## Getting started
+## ▶️ Getting started
 
 ### 🚀 Import using a CDN
 
@@ -60,7 +60,9 @@ Then you just need to import your configuration file before you import the lyt m
 
 You can find a template config file where all variables are commented with the default values in `/scss/_config.scss`. This configuration file is the default configuration, it is imported by default when building the library.
 
-## Modules
+## 📚 Documentation
+
+**This documentation will be moved in the future when the documentation website will open.**
 
 Lyt is build from multiple modules:
 
@@ -72,7 +74,7 @@ Lyt is build from multiple modules:
   - [Margin](#margin)
   - [Padding](#padding)
 
-**All the documentation use the default configuration**
+**All the documentation use the default configuration.**
 
 ### Grid
 
