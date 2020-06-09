@@ -210,3 +210,25 @@ Padding classes are used like margin classes but add padding instead.
 ```html
 <p class="padding-t-xxl">...<p>
 ```
+
+## Contributing
+
+Any help and contribution is always welcome, feel free to submit issues and/or contribute to the project.
+
+1. Fork the project
+2. Create your feature or fix Branch (`git checkout -b feature/feature-name` or `git checkout -b fix/fix-name`)
+3. Commit your changes using [semantic messages](https://www.conventionalcommits.org/) (`git commit -m "feat/fix: Add some feature or fix"`)
+4. Push to the branch (`git push origin feature/feature-name` or `git push origin fix/fix-name`)
+5. Open a pull request
+
+## License
+
+Lyt is distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+[![Buy me a coffee badge](https://img.shields.io/badge/-Buy%20me%20a%20coffee-important?logo=buy%20me%20a%20coffee&logoColor=white&style=flat-square)](https://www.buymeacoffee.com/ColinEspinas)
+[![LinkedIn badge](https://img.shields.io/badge/-LinkedIn-black.svg?logo=linkedin&colorB=555&style=flat-square)](https://www.linkedin.com/in/colin-espinas-9739b8178/l)
+
+Colin Espinas - [Website](https://colinespinas.com) - contact@colinespinas.com
+
+Project link: [https://github.com/ColinEspinas/lyt](https://github.com/ColinEspinas/lyt)
