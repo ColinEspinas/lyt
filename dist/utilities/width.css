@@ -1,0 +1,71 @@
+.width-0 {
+  width: 0;
+}
+
+.width-name {
+  width: 25%;
+}
+
+.width-name {
+  width: calc(100% / 3);
+}
+
+.width-name {
+  width: 50%;
+}
+
+.width-name {
+  width: 75%;
+}
+
+.width-name {
+  width: 100%;
+}
+
+.max-width-0 {
+  max-width: 0;
+}
+
+.max-width-name {
+  max-width: 25%;
+}
+
+.max-width-name {
+  max-width: calc(100% / 3);
+}
+
+.max-width-name {
+  max-width: 50%;
+}
+
+.max-width-name {
+  max-width: 75%;
+}
+
+.max-width-name {
+  max-width: 100%;
+}
+
+.min-width-0 {
+  min-width: 0;
+}
+
+.min-width-name {
+  min-width: 25%;
+}
+
+.min-width-name {
+  min-width: calc(100% / 3);
+}
+
+.min-width-name {
+  min-width: 50%;
+}
+
+.min-width-name {
+  min-width: 75%;
+}
+
+.min-width-name {
+  min-width: 100%;
+}

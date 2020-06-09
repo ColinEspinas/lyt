@@ -1,0 +1,46 @@
+@import "../config";
+
+$width-classname: "width" !default;
+$max-width-classname: "max-width" !default;
+$min-width-classname: "min-width" !default;
+
+$width-values: (
+	25: 25%,
+	33: calc(100% / 3),
+	50: 50%,
+	75: 75%,
+	100: 100%,
+) !default;
+
+.#{$width-classname} {
+	&-0 {
+		width: 0;
+	}
+	@each $name, $value in $width-values {
+		&-#{name} {
+			width: $value;
+		}
+	}
+}
+
+.#{$max-width-classname} {
+	&-0 {
+		max-width: 0;
+	}
+	@each $name, $value in $width-values {
+		&-#{name} {
+			max-width: $value;
+		}
+	}
+}
+
+.#{$min-width-classname} {
+	&-0 {
+		min-width: 0;
+	}
+	@each $name, $value in $width-values {
+		&-#{name} {
+			min-width: $value;
+		}
+	}
+}
