@@ -67,6 +67,8 @@ Lyt is build from multiple modules:
 - [Grid](#grid)
   - [Flex](#flex)
 - [Utilities](#utilities)
+  - [Display](#display)
+  - [Float](#float)
   - [Margin](#margin)
   - [Padding](#padding)
 
@@ -80,7 +82,7 @@ Used to manage the layout easily, the flex grid uses a classic system of row and
 
 Create rows and columns using `row` and `column`.
 
-By default columns take 100% of the available width. You can constraint a column width by using the `-n` class (n being the amount of space out of 12 taken by the column).
+By default columns take 100% of the available width. You can constraint a column width by using the `-<n>` class (`<n>` being the amount of space out of 12 taken by the column).
 
 Add the `gap` class to a row to add gaps between columns.
 
@@ -96,7 +98,14 @@ Add the `gap` class to a row to add gaps between columns.
 ```
 [See example live](https://jsfiddle.net/hpax1ksL/)
 
-You can also specify a breakpoint to a column by using the `breakpoint-n` class instead (e.g. `sm-5`).
+You can also specify a breakpoint to a column by using the `<breakpoint>-<n>` class instead (e.g. `sm-5`).
+
+| Breakpoint | Value  |
+|------------|--------|
+| sm         | 544p   |
+| md         | 768px  |
+| lg         | 1012px |
+| xl         | 1280px |
 
 By specifying multiple breakpoints to a column, the column will adapt automatically.
 
@@ -112,7 +121,7 @@ By specifying multiple breakpoints to a column, the column will adapt automatica
 ```
 [See example live](https://jsfiddle.net/ogarwz7v/)
 
-You can offset columns by using the `offset-n` class. You can also specify breakpoints by using the `offset-breakpoint-n` class.
+You can offset columns by using the `offset-<n>` class. You can also specify breakpoints by using the `offset-<breakpoint>-<n>` class.
 
 ```html
 <div class="row ">
@@ -123,52 +132,81 @@ You can offset columns by using the `offset-n` class. You can also specify break
 ```
 [See example live](https://jsfiddle.net/sr2c0w96/)
 
-| Breakpoint | Value  |
-|------------|--------|
-| sm         | 544p   |
-| md         | 768px  |
-| lg         | 1012px |
-| xl         | 1280px |
-
 ### Utilities
+
+#### Display
+
+Use the `display-<mode>` class to change the display of an element. 
+
+```html
+<p class="display-inline-block">...</p>
+```
+
+| Syntax | Mode         |
+|--------|--------------|
+| b      | block        |
+| i      | inline       |
+| ib     | inline-block |
+| none   | none         |
+
+#### Float
+
+Use the `float` classes to add float to an element.
+
+```html
+<p class="float-l">...</p>
+```
+
+| Syntax | Value |
+|--------|-------|
+| l      | left  |
+| r      | right |
+
+Clear after using floats with the `float-clear` class on an element.
+
+```html
+<p class="float-l">...</p>
+<div class="float-clear"></div>
+```
 
 #### Margin
 
-Use the `margin-size` class to add a margin to an element (`size` being the name of the value to the margin).
+Use the `margin-<size>` class to add a margin to an element (`<size>` being the name of the value to the margin).
 
 ```html
-<p class="margin-m">I am a funny text.</p>
+<p class="margin-m">...</p>
 ```
 
 Default configuration uses the following values for margin:
-| Name | Value |
-|------|-------|
-| xs   | 4px   |
-| s    | 8px   |
-| m    | 16px  |
-| l    | 24px  |
-| xl   | 32px  |
-| xxl  | 40px  |
+| Syntax | Value |
+|--------|-------|
+| a      | auto  |
+| xs     | 4px   |
+| s      | 8px   |
+| m      | 16px  |
+| l      | 24px  |
+| xl     | 32px  |
+| xxl    | 40px  |
 
-By default, the margin value is applied to all sides. You can specify sides with `margin-side-size` (e.g. `margin-t-xl`).
+By default, the margin value is applied to all sides. You can specify sides with `margin-<side>-<size>` (e.g. `margin-t-xl`).
 
 ```html
-<p class="margin-tb-m">I am a super funny text.</p>
+<p class="margin-tb-m">...</p>
 ```
 
-| Name | Sides          |
-|------|----------------|
-| t    | top            |
-| l    | left           |
-| b    | bottom         |
-| r    | right          |
-| tb   | top and bottom |
-| lr   | left and right |
+| Syntax | Sides          |
+|--------|----------------|
+| t      | top            |
+| l      | left           |
+| b      | bottom         |
+| r      | right          |
+| tb     | top and bottom |
+| lr     | left and right |
 
 #### Padding
 
 Padding classes are used like margin classes but add padding instead.
 
 ```html
-<p class="padding-t-xxl">I am super cool!<p>
+<p class="padding-t-xxl">...<p>
 ```

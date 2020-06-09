@@ -1486,15 +1486,15 @@
   }
 }
 
-.display-block {
+.display-b {
   display: block;
 }
 
-.display-inline {
+.display-i {
   display: inline;
 }
 
-.display-inline-block {
+.display-ib {
   display: inline-block;
 }
 

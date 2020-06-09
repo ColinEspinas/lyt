@@ -1,13 +1,9 @@
-.float-left {
-  float: left;
-}
-
-.float-right {
+.float-r {
   float: right;
 }
 
-.float-none {
-  float: none;
+.float-l {
+  float: left;
 }
 
 .float-clear {

@@ -3,17 +3,17 @@
 // Default class name for display classes
 $display-classname: "display" !default;
 
+$display-values: (
+	b: block,
+	i: inline,
+	ib: inline-block,
+	none: none,
+) !default;
+
 .#{$display-classname} {
-	&-block {
-		display: block;
-	}
-	&-inline {
-		display: inline;
-	}
-	&-inline-block {
-		display: inline-block;
-	}
-	&-none {
-		display: none;
+	@each $name, $value in $display-values {
+		&-#{$name} {
+			display: $value;
+		}
 	}
 }

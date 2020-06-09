@@ -3,15 +3,16 @@
 // Default class name for float classes
 $float-classname: "float" !default;
 
+$float-values: (
+	r: right,
+	l: left
+) !default;
+
 .#{$float-classname} {
-	&-left {
-		float: left;
-	}
-	&-right {
-		float: right;
-	}
-	&-none {
-		float: none;
+	@each $name, $value in $float-values {
+		&-#{$name} {
+			float: $value;
+		}
 	}
 	&-clear {
 		clear: both;
