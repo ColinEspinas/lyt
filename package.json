@@ -1,5 +1,5 @@
 {
-  "name": "lyt",
+  "name": "lyt-css",
   "version": "0.0.1",
   "description": "A flexible & highly configurable CSS layout library",
   "main": "scss/lyt.scss",
