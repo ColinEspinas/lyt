@@ -219,6 +219,28 @@ Padding classes are used like margin classes but add padding instead.
 <p class="padding-t-xxl">...<p>
 ```
 
+#### Width
+
+You can use the `width-<value>` class to change the width of an element.
+
+```html
+<p class="width-33">...<p>
+```
+
+| Syntax | Values          |
+|--------|-----------------|
+| 25      | 25%            |
+| 33      | calc(100% / 3) |
+| 50      | 50%            |
+| 75      | 75%            |
+| 100     | 100%           |
+
+You can also use the `min-width-<value>` or `max-width-<value>`.
+
+```html
+<p class="max-width-50">...<p>
+```
+
 ## Contributing
 
 Any help and contribution is always welcome, feel free to submit issues and/or contribute to the project.

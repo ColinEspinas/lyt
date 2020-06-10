@@ -17,7 +17,7 @@ $width-values: (
 		width: 0;
 	}
 	@each $name, $value in $width-values {
-		&-#{name} {
+		&-#{$name} {
 			width: $value;
 		}
 	}
@@ -28,7 +28,7 @@ $width-values: (
 		max-width: 0;
 	}
 	@each $name, $value in $width-values {
-		&-#{name} {
+		&-#{$name} {
 			max-width: $value;
 		}
 	}
@@ -39,7 +39,7 @@ $width-values: (
 		min-width: 0;
 	}
 	@each $name, $value in $width-values {
-		&-#{name} {
+		&-#{$name} {
 			min-width: $value;
 		}
 	}
