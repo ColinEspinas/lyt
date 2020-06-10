@@ -3,7 +3,7 @@
 <h1 align="center">lyt</h1>
 <div align="center">
 
-  [![v.0.0.1](https://img.shields.io/badge/lyt-0.0.1-blue.svg?style=flat-square)](https://github.com/ColinEspinas/lyt)
+  [![NPM](https://img.shields.io/npm/v/lyt-css?style=flat-square)](https://www.npmjs.com/package/lyt-css)
   [![MIT License](https://img.shields.io/github/license/Spiderpig86/Cirrus.svg?style=flat-square)](https://github.com/ColinEspinas/lyt/blob/master/LICENSE)
   [![Issues](https://img.shields.io/github/issues/ColinEspinas/lyt?style=flat-square)](https://github.com/ColinEspinas/lyt/issues)
 
