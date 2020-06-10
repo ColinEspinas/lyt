@@ -1,6 +1,6 @@
 {
   "name": "lyt-css",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A flexible & highly configurable CSS layout library",
   "main": "scss/lyt.scss",
   "unpkg": "dist/lyt.min.css",
