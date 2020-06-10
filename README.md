@@ -79,6 +79,7 @@ Lyt is build from multiple modules:
   - [Float](#float)
   - [Margin](#margin)
   - [Padding](#padding)
+  - [Width](#width)
 
 **All the documentation use the default configuration.**
 
