@@ -1,0 +1,15 @@
+@import "../../config";
+
+$grid-breakpoints: (
+	sm: 544px,
+	md: 768px,
+	lg: 1012px,
+	xl: 1280px
+) !default;
+
+// Add property on specified breakpoint
+@mixin breakpoint($bp-name) {
+	@media (max-width: map-get($grid-breakpoints, $bp-name)) {
+		@content;
+	}
+}
