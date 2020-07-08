@@ -1,5 +1,5 @@
 
-<p align="center"><img src="./docs/assets/images/logo.png" width="50"></p>
+<p align="center"><img src="https://colinespinas.com/storage/projects-image/Lyt.png" width="100"></p>
 <h1 align="center">lyt</h1>
 <div align="center">
 
