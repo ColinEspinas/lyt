@@ -6,7 +6,7 @@ $column-classname: "column" !default;
 
 $column-count: 12 !default;
 
-$grid-breakpoints: (
+$breakpoints: (
 	sm: 544px,
 	md: 768px,
 	lg: 1012px,
@@ -78,7 +78,7 @@ $grid-gaps: (
 	}
 
 	// Init breakpoint columns:
-	@each $bp-name, $bp-value in map-reverse($grid-breakpoints) {
+	@each $bp-name, $bp-value in map-reverse($breakpoints) {
 		@for $i from 1 through $column-count {
 			&.#{$bp-name}-#{$i} {
 				width: calc(100% * #{$i} / #{$column-count});
@@ -111,7 +111,7 @@ $grid-gaps: (
 	}
 
 	// Init Offset for breakpoint columns:
-	@each $bp-name, $bp-value in map-reverse($grid-breakpoints) {
+	@each $bp-name, $bp-value in map-reverse($breakpoints) {
 		@for $i from 1 through $column-count {
 			&.offset-#{$bp-name}-#{$i} {
 				margin-left: calc(100% * #{$i} / #{$column-count});
@@ -120,12 +120,12 @@ $grid-gaps: (
 	}
 
 	// Add each breakpoints media queries:
-	@each $bp-name, $bp-value in $grid-breakpoints {
+	@each $bp-name, $bp-value in $breakpoints {
 		@media (min-width: $bp-value) {
 			@for $i from 1 through $column-count {
 
 				// Set auto column sizes on first media query
-				@if index(($grid-breakpoints), ($bp-name $bp-value)) == 1 {
+				@if index(($breakpoints), ($bp-name $bp-value)) == 1 {
 					&.\-#{$i} {
 						width: calc(100% * #{$i} / #{$column-count});max-width: calc(100% * #{$i} / #{$column-count});
 					}

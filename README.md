@@ -47,13 +47,13 @@ npm install lyt-css
 
 ### ⚙️ Configure
 
-Lyt is designed to be easily configurable using `scss`.
+Lyt is designed to be easily configurable using SASS/SCSS.
 
 When using a CDN or local download, you can import the `scss` files by loading them from the `/scss` directory.
 
 ```scss
 @import "path/to/lyt/scss/lyt.scss";
-/* Or using individual modules */
+/* Or import individual modules */
 @import "path/to/lyt/scss/grid/flex.scss";
 ```
 
@@ -81,7 +81,7 @@ Lyt is build from multiple modules:
   - [Padding](#padding)
   - [Width](#width)
 
-**All the documentation use the default configuration.**
+**All the documentation uses the default configuration.**
 
 ### Grid
 
@@ -148,7 +148,7 @@ You can offset columns by using the `offset-<n>` class. You can also specify bre
 Use the `display-<mode>` class to change the display of an element. 
 
 ```html
-<p class="display-inline-block">...</p>
+<p class="display-ib">...</p>
 ```
 
 | Syntax | Mode         |
@@ -240,6 +240,23 @@ You can also use the `min-width-<value>` or `max-width-<value>`.
 
 ```html
 <p class="max-width-50">...<p>
+```
+
+#### Mixins
+
+Mixins can only be used in SASS/SCSS.
+
+##### Breakpoint
+
+The breakpoint mixin can be used to declare classes/properties applied at specific breakpoints.
+
+```scss
+.my-text {
+  font-size: 16px;
+  @include breakpoint(md) {
+    font-size: 24px;
+  }
+}
 ```
 
 ## Contributing
